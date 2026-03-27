@@ -1,0 +1,14 @@
+com.perforce.p4search.service.tenant-id=default
+# Perforce configuration
+com.perforce.p4search.core.p4port=
+com.perforce.p4search.core.p4trust=
+com.perforce.p4search.core.allowed=
+com.perforce.p4search.core.service.p4user=
+com.perforce.p4search.core.service.p4ticket=
+com.perforce.p4search.core.index.p4user=
+com.perforce.p4search.core.index.p4ticket=
+# Indexer configuration
+com.perforce.p4search.index.name=
+# ElasticSearch configuration
+com.perforce.p4search.elastic.user=elastic
+com.perforce.p4search.elastic.pass=

@@ -1,0 +1,26 @@
+# P4Search configuration
+com.perforce.p4search.service.version=******
+com.perforce.p4search.service.log=log4j2.xml
+com.perforce.p4search.service.host=0.0.0.0
+com.perforce.p4search.service.port=1601
+com.perforce.p4search.service.protocol=http
+com.perforce.p4search.service.keystore=
+com.perforce.p4search.service.keypass=
+com.perforce.p4search.service.truststore=
+com.perforce.p4search.service.trustpass=
+com.perforce.p4search.service.access-control-allow-origin=http://localhost:1601
+com.perforce.p4search.service.token=00000000-0000-0000-0000-000000000000
+com.perforce.p4search.service.help-url=https://help.perforce.com/helix-core/integrations-plugins/p4search/current/Content/P4Search/Home-p4search.html
+com.perforce.p4search.service.external-url=http://host.docker.internal:1601
+com.perforce.p4search.index.threads=8
+com.perforce.p4search.service.startup-retry=30000
+com.perforce.p4search.service.global-rate-limit=600
+com.perforce.p4search.service.login-rate-limit=5
+com.perforce.p4search.service.access-token-ttl=600
+com.perforce.p4search.service.refresh-token-ttl=900
+com.perforce.p4search.service.live-log-limit=300
+com.perforce.p4search.elastic.hosts=http://elasticsearch:9200
+com.perforce.p4search.elastic.insecure=true
+com.perforce.p4search.elastic.filter=true
+com.perforce.p4search.index.journal-path=./jnl
+com.perforce.p4search.index.journal-threshold=1000

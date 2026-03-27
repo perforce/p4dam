@@ -1,0 +1,46 @@
+notifiers: &notifiers
+  notifiers:
+    mail:
+      type: mail
+      on_success: false
+      host: $HTH_SMTP_ADDRESS
+      port: $HTH_SMTP_PORT
+      username: $HTH_SMTP_USERNAME
+      password: $HTH_SMTP_PASSWORD
+      from: $HTH_EMAIL
+      to: $HTH_BACKUPS_EMAIL
+workdir: /var/opt/hth/backups/tmp
+models:
+  mongodb:
+    databases:
+      mongodb:
+        type: mongodb
+        uri: $HTH_DB_URI
+    storages:
+      local:
+        type: local
+        keep: 30
+        path: /var/opt/hth/backups/mongodb_backup
+    compress_with:
+      type: tgz
+    <<: *notifiers
+  backend:
+    before_script: |
+      mkdir /var/opt/hth/backups/tmp
+      find /var/opt/hth/shared/companies -mindepth 2 -maxdepth 2 \( -type d -name attachments -o -type f -name .license.pem \) > /var/opt/hth/backups/tmp/backend_backups_files
+    archive:
+      tar_options:
+        - --exclude=lost+found
+        - --warning=no-file-changed
+        - --warning=no-file-removed
+        - --files-from=/var/opt/hth/backups/tmp/backend_backups_files
+      includes:
+        - /tmp/do_not_remove
+    storages:
+      local:
+        type: local
+        keep: 30
+        path: /var/opt/hth/backups/backend_backup
+    compress_with:
+      type: tgz
+    <<: *notifiers

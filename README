@@ -1,0 +1,3 @@
+# P4DAM
+
+For an example setup using Docker Compose, refer to: https://perforce.com/helix-core/helix-dam/current/Content/HTH-Admin/DAM/install-p4dam-docker.html

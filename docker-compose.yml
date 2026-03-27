@@ -1,0 +1,140 @@
+services:
+  nginx:
+    image: perforce/p4dam-nginx:2026.1
+    platform: linux/amd64
+    container_name: p4dam-nginx
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl/server.crt:/etc/nginx/ssl/server.crt
+      - ./nginx/ssl/server.key:/etc/nginx/ssl/server.key
+  backend:
+    image: perforce/p4dam-backend:2026.1
+    platform: linux/amd64
+    container_name: p4dam-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - shared_data:/var/opt/hth/shared
+  workers:
+    image: perforce/p4dam-workers:2026.1
+    platform: linux/amd64
+    container_name: p4dam-workers
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - shared_data:/var/opt/hth/shared
+      - backups_data:/var/opt/hth/backups
+      - ./gobackup/gobackup.yml:/opt/hth/embedded/etc/gobackup.yml
+  scheduler:
+    image: perforce/p4dam-scheduler:2026.1
+    platform: linux/amd64
+    container_name: p4dam-scheduler
+    restart: unless-stopped
+    env_file:
+      - .env
+  streamer:
+    image: perforce/p4dam-streamer:2026.1
+    platform: linux/amd64
+    container_name: p4dam-streamer
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - shared_data:/var/opt/hth/shared
+  moonshine:
+    image: perforce/p4dam-moonshine:2026.1
+    platform: linux/amd64
+    container_name: p4dam-moonshine
+    restart: unless-stopped
+    env_file:
+      - .env
+  anycable_go:
+    image: anycable/anycable-go:1.6.1
+    container_name: p4dam-anycable_go
+    restart: unless-stopped
+    env_file:
+      - .env
+  mongo:
+    image: mongo:8.0.17
+    container_name: p4dam-mongo
+    restart: unless-stopped
+    volumes:
+      - ./mongo/init.sh:/docker-entrypoint-initdb.d/init.sh
+      - mongo_data:/data/db
+    env_file:
+      - .env
+  redis:
+    image: redis:7.2.12
+    container_name: p4dam-redis
+    restart: unless-stopped
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - redis_data:/data
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+  mailhog:
+    image: mailhog/mailhog
+    platform: linux/amd64
+    container_name: p4dam-mailhog
+    restart: unless-stopped
+    ports:
+     - "1080:8025"
+  p4search:
+    image: perforce/p4search:r26.1
+    platform: linux/amd64
+    container_name: p4dam-p4search
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./p4search/etc_in:/opt/perforce/helix-p4search/etc_in
+    ports:
+      - "1601:1601"
+  p4render:
+    image: perforce/p4render:r26.1
+    platform: linux/amd64
+    container_name: p4dam-p4render
+    restart: unless-stopped
+    entrypoint: /opt/perforce/p4render/entrypoint.sh -m worker -S http://p4search:1601 -x ${HTH_P4SEARCH_TOKEN:-}
+  elasticsearch:
+    container_name: p4dam-elasticsearch
+    restart: unless-stopped
+    build:
+      context: ./elasticsearch
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - discovery.type=single-node
+      - cluster.name=p4dam
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - "xpack.security.enabled=true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 4000m
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+
+volumes:
+  shared_data:
+    driver: local
+  backups_data:
+    driver: local
+  mongo_data:
+    driver: local
+  redis_data:
+    driver: local
+  elasticsearch:
+    driver: local
