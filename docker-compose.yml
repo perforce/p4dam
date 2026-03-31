@@ -22,6 +22,8 @@ services:
       - .env
     volumes:
       - shared_data:/var/opt/hth/shared
+    # extra_hosts:
+    #   - "dam.example.com:host-gateway"
   workers:
     image: perforce/p4dam-workers:2026.1
     platform: linux/amd64
