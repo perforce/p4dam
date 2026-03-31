@@ -1,0 +1,445 @@
+Copyright (c) 2026, Perforce Software, Inc. All rights reserved.
+
+
+BY INSTALLING OR DOWNLOADING THE SOFTWARE, YOU ARE ACCEPTING AND AGREEING TO THE TERMS OF
+THIS END USER LICENSE AGREEMENT (THE "LICENSE AGREEMENT"), AND IT LEGALLY BINDS YOU AND
+YOUR EMPLOYER (COLLECTIVELY THE "LICENSEE"), AND PERFORCE SOFTWARE, INC., A DELAWARE
+CORPORATION ("PERFORCE"), TO THE TERMS AND CONDITIONS OF THE LICENSE AGREEMENT (INCLUDING
+ANY TERMS, CONDITIONS, AND RESTRICTIONS CONTAINED IN ANY ORDER RELATING TO THE SOFTWARE).
+IF THE LICENSEE DOES NOT ACCEPT AND AGREE TO THE TERMS AND CONDITIONS OF THE LICENSE
+AGREEMENT THEN DO NOT DOWNLOAD, INSTALL, OR OTHERWISE USE THE SOFTWARE.
+
+THE RIGHT TO USE THE SOFTWARE IS CONDITIONAL UPON ACCEPTANCE OF THE LICENSE AGREEMENT,
+UNLESS THE LICENSEE HAS ENTERED INTO A WRITTEN AND DULY SIGNED LICENSE AGREEMENT WITH
+PERFORCE, IN WHICH CASE SUCH SIGNED LICENSE AGREEMENT WILL GOVERN THE LICENSEE'S USE OF
+THE SOFTWARE.
+
+1.      Certain Defined Terms.  For purposes hereof, the terms provided below, when used
+anywhere in this License Agreement with initial capital letters, will have the respective
+meanings as set forth below:
+
+1.1     "Authorized User" shall mean an employee or third-party agent of Licensee who is
+assigned a unique and fixed user account to consume one license to use the Software
+licensed under this License Agreement on a single server, or on multiple servers,
+regardless of whether such individual is actively using the Software at any given time.  A
+non-human operated device, or automated process, will be counted as an Authorized User in
+addition to all individuals authorized to use the Software licensed under this License
+Agreement if such devices can access such Software.
+
+1.2     "Background Job" is a software program that uses, or accesses, the Software's
+server, either by means of Perforce's client programs or the Perforce client API, to
+perform automated tasks.
+
+1.3     "Software" means the machine-readable object code of Perforce's Helix Core
+computer software programs, and the then-current printed and digital user manual(s),
+instructions, on- line help files, and technical documentation for such computer software
+program(s) made available by Perforce (collectively, the "Documentation"), for which
+Licensee has paid the applicable license fees, and any modified or updated versions of any
+of the foregoing made available to Licensee pursuant to Licensee's purchase of either a
+time-based license or Software Support for a perpetual license, under the same terms and
+conditions.  The Software does not include any third-party software products that may be
+embedded in or bundled with the Software, which such products are separately licensed by
+the copyright holder.
+
+1.4     "Software Support" means technical support and maintenance services for the
+Software licensed under this License Agreement as described in Perforce's then-current
+Software Support policy available on Perforce's website, and any new releases to the
+Software for which Licensee is paying the Software Support fee.
+
+2.      Grant of License; Restrictions.
+
+2.1     Grant of License.  In consideration of Licensee's payment of the license fee, and
+subject to the terms and conditions of this License Agreement, Perforce grants to Licensee
+a limited, non-sub licensable, non-exclusive, non-transferable, fully-paid (upon payment
+of the applicable fees), time-based or perpetual (as is indicated in the ordering document
+or invoice) license for Licensee's Authorized Users to: (a) install and use the Software
+ordered by Licensee in accordance with the Documentation for Licensee's own direct
+internal business purposes, and subject to any limitation on use specified in this License
+Agreement; (b) install and use the Documentation solely in conjunction with and in support
+of Licensee's licensed use of the Software; and (c) make the number of exact copies of the
+Software as required for archival and back-up purposes, and a reasonable number of copies
+of the Documentation to support the licensed number of users, provided that each copy of
+the Software and the Documentation retains all copyright and other proprietary notices
+included in the original copy provided by Perforce to the Licensee.  Perforce hereby
+reserves all rights in and to the Software that are not specifically granted by this
+License Agreement.
+
+2.2     Restrictions on License Grant.  Except as expressly provided in Section 2.1 above,
+Licensee will not, either directly or indirectly, cause, instruct, direct, or permit any
+other party to: (a) reverse engineer, translate, disassemble, decompile, sell, rent,
+lease, manufacture, adapt, create derivative works from, or otherwise modify or distribute
+the Software or the Documentation, or any part thereof; (b) attempt to discover the source
+code of the Software, nor permit any third party to do so; (c) copy, in whole or in part,
+the Software or the Documentation; (d) delete any copyright, trademark, patent or other
+notices of proprietary rights of Perforce or other parties as they appear anywhere in or
+on the Software or Documentation; or (e) tamper with, or attempt to tamper with, or
+circumvent or disable, or attempt to circumvent or disable, any license key or other
+limiting function delivered with the Software, or otherwise attempt to gain access to
+functionality or capacity that is not validly licensed by Licensee.  Licensee will not
+remove or otherwise alter any proprietary notices or labels from the Software,
+Documentation, or any portion thereof.
+
+2.3     Restrictions on License Use.  All Software licensed under the terms of this
+License Agreement will be licensed under one of the following licensing subtypes.
+
+(a)     Named License.  In the case of named licenses for the Software (each a "Named
+License"), each Authorized User of Licensee (each, a "Named User") will be assigned a
+unique and fixed user account to consume one license to use the Software licensed under
+this License Agreement on a single server, or on multiple servers, regardless of whether
+such individual is actively using the Software at any given time.  The Named User who is
+assigned a Named License will have full access to the functionality of the Software.
+
+(b)     Bot User License.  In the case of a bot user license for the Software (a "Bot User
+License"), the Authorized User has limited access to the functionality of the Software (a
+"Bot User").  The Bot User assigned a Bot User License is only permitted to schedule and
+run "Background Jobs" in connection with the use of the Software and does not have access
+to any Graphical User Interfaces ("GUI") within the Software.  A single Bot User License
+may be used to run multiple Background Jobs, but the Licensee must acquire the number of
+Bot User Licenses equal to the number of unique Bot Users it requires (e.g., to provide
+for traceability and security).  Any use of the Bot User License for any other purpose
+than as set forth in this Section 2.3(b) will be a material breach of this License
+Agreement.
+
+(c)     Git Only License.  In the case of a Git only user license (a "Git Only License"),
+the Authorized User has limited access to the functionality of the Software (the "Git Only
+User").  The Git Only User assigned a Git Only License is restricted to interactions
+within the Software to contents that are stored in depots of the type, "graph," "spec,"
+and "upload," and the Git Only User holding a Git Only License is not permitted to access
+any other functionality of the Software, including, without limitation, the Helix
+Artifacts functionality.  Any use of the Git Only License for any other purpose than as
+set forth in this Section 2.3(c) will be a breach of this License Agreement.
+
+(d)     Helix Artifacts Only License.  In the case of a Helix Artifacts only user license
+(a "Helix Artifacts Only License"), the Authorized User has limited access to the
+functionality of the Software ("Helix Artifacts User").  The Helix Artifacts User assigned
+a Helix Artifacts Only License is restricted to interactions with the Software either
+through the Artifacts API, or through the Artifacts web interface, and the Helix Artifacts
+User holding a Helix Artifacts Only License is not permitted to access any other
+functionality of the Software, including, without limitation, the functionality available
+to a holder of a Git Only License.  Any use of the Helix Artifacts Only License for any
+other purpose than as set forth in this Section 2.3(d) will be a breach of this License
+Agreement.
+
+(e)     Git + Helix Artifacts Only License.  In the case of a Git and Helix Artifacts
+license (a "Git + Helix Artifacts License"), the Authorized User has limited access to the
+functionality of the Software (the "Git + Helix Artifacts Only User").  The Git + Helix
+Artifacts Only User assigned a Git + Helix Artifacts Only License has access to the
+functionality set forth in Sections 2.3(c) and 2.3(d) above.  Any use of the Git + Helix
+Artifacts Only License for any other purpose than as set forth in this Section 2.3(e) will
+be a breach of this License Agreement.
+
+(f)     No Shared Use of Any of the License Types.  A separate license is required for
+each Authorized User and may not be shared.  Any of the licenses referenced in Sections
+2.3 (a) â€“ (e) above that are assigned to an Authorized User to access the Software may not
+be reassigned other than for the permanent transfer of such license to another Authorized
+User if the current Authorized User is no longer authorized to have access to the
+Software.
+
+2.4     Third Party Agents.  Licensee will be fully responsible for the compliance with
+the terms and conditions of this License Agreement by third parties who are delivering
+services to Licensee pursuant to a written contract with Licensee, and any breach of this
+License Agreement by a third-party agent will be deemed to be a breach by Licensee.
+
+2.5     Compliance with Laws; Export Control.  Licensee agrees to comply fully with all
+applicable laws, statutes, regulations, rules, ordinances, codes, and standards relating
+to any export controls and economic sanctions laws of the United States or abroad.
+Accordingly, any use, transshipment, or diversion of the Software contrary to applicable
+export control laws or sanctions laws is prohibited.
+
+2.6     Federal Government End Use Provisions.  Perforce may provide the Software for
+ultimate federal government end use solely in accordance with the following: Government
+technical data and software rights related to the Software include only those rights
+customarily provided to the public as defined in this License Agreement.  This customary
+commercial license is provided in accordance with FAR 12.211 (Technical Data) and FAR
+12.212 (Computer Software), and the Department of Defense transactions, DFAR 252.227-7015
+(Technical Data â€“ Commercial Items) and DFAR 227.7202-3 (Rights in Commercial Computer
+Software or Computer Software Documentation).  If a government agency has a need for
+rights not conveyed under these terms, it must negotiate with Perforce to determine if
+there are acceptable terms for transferring such rights, and a mutually acceptable written
+addendum specifically conveying such rights.
+
+2.7     Verification.  Upon providing Licensee with ten (10) days' advance written notice,
+Perforce may review Licensee's use of the Software to verify Licensee's compliance with
+the terms of this License Agreement.  Any such verification process will be: (a)
+restricted in scope, documentation, manner, and duration to that which is reasonably
+necessary to achieve its purpose; and (b) conducted during regular business hours at
+Licensee's facilities if a remote verification process is not possible.  Perforce will not
+unreasonably interfere with Licensee's business activities during such verification
+process.  Licensee will be liable for promptly remedying any underpayments revealed during
+the audit at the then-current price per Authorized User.
+
+2.8     Confidentiality.  Each party to this License Agreement agrees to keep confidential
+and to use only for purposes of performing its obligations under this License Agreement,
+any proprietary or confidential information of the other party disclosed pursuant to this
+License Agreement that is marked as confidential, is identified at the time of disclosure
+as confidential, or that would reasonably be considered confidential or proprietary in
+nature. The obligation of confidentiality shall not apply to information that is publicly
+available through authorized disclosure, or information that is required to be disclosed
+by law, government order, or request to be disclosed (provided that the receiving party
+shall give reasonable advance written notice to the other party prior to such disclosure
+and an opportunity, at the objecting party's expense, to take legal steps to resist or
+narrow such request).  Licensee acknowledges and agrees that the Software shall be deemed
+as Perforce's confidential information.  Each party's obligations of nondisclosure with
+regard to proprietary or confidential information are effective as of the date such
+proprietary or confidential information is first disclosed to the receiving party and will
+expire five (5) years thereafter; provided, however, with respect to any proprietary or
+confidential information that constitutes a trade secret (as determined under applicable
+laws), such obligations of nondisclosure will survive the termination or expiration of
+this License Agreement for as long as such proprietary or confidential information remains
+subject to trade secret protection under applicable laws.
+
+3.      Limited Warranties and Disclaimers.
+
+3.1     Limited Warranty.  Perforce warrants that for a period of thirty (30) days after
+the receipt of the latest release of Software, the Software will perform substantially in
+accordance with its Documentation.  Perforce does not warrant, however, that Licensee's
+use of the Software will be uninterrupted, that the operation of the Software will be
+error-free, that the Software will meet Licensee's requirements or that all errors will be
+corrected.  If, during the warranty period, as defined above, the Software fails to
+perform in accordance with the warranty, Perforce shall use reasonable commercial efforts
+to correct the failure of the Software to perform in accordance with this warranty.
+
+3.2     Warranty Not Applicable.  The above limited warranty will not apply to: (i) any
+defects caused by the combination, operation, or use of the Software with software,
+hardware, or other materials not provided by Perforce; (ii) the Software being modified by
+any party other than Perforce; and (iii) any use of the Software that does not conform to
+Perforce's requirements as set forth in the documentation.
+
+3.3     DISCLAIMER OF WARRANTIES.  EXCEPT AS EXPRESSLY SET FORTH IN SECTION 3.1, THE
+SOFTWARE IS PROVIDED "AS IS," AND PERFORCE MAKES NO OTHER REPRESENTATIONS OR WARRANTIES,
+AND PERFORCE DISCLAIMS ALL REPRESENTATIONS, WARRANTIES, AND CONDITIONS RELATING TO THE
+SOFTWARE, OR OTHER SUBJECT MATTER OF THIS LICENSE AGREEMENT, WHETHER ORAL OR WRITTEN,
+EXPRESS OR IMPLIED, ARISING FROM COURSE OF DEALING, COURSE OF PERFORMANCE, OR USAGE IN
+TRADE, OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF TITLE,
+NONINFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.  PERFORCE DOES NOT
+MAKE ANY WARRANTY WITH RESPECT TO THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE
+SOFTWARE.  TO THE EXTENT THAT PERFORCE IS NOT PERMITTED BY APPLICABLE LAW TO DISCLAIM ANY
+WARRANTY PROVIDED HEREIN, THE SCOPE AND DURATION OF SUCH WARRANTY SHALL BE THE MINIMUM
+REQUIRED UNDER SUCH LAW.
+
+3.4     Licensee Back-Ups. Licensee is responsible for backing up all data or reports
+produced by the Software, and for providing an operating environment for the Software as
+specified in the Documentation.
+
+4.      Intellectual Property Ownership; Intellectual Property Infringement.
+
+4.1     Intellectual Property.  Licensee acknowledges and agrees that it obtains no
+ownership rights in the Software, Documentation, or the Software Support under the terms
+of this License Agreement, and that Perforce has and retains all right, title, interest,
+and ownership, including all intellectual property rights, in and to the Software,
+Documentation, and Software Support, and in any copies, improvements, enhancements, or
+updates of the Software and the Documentation, whether made by Licensee or Perforce.  As
+between Perforce and Licensee, Perforce owns all rights, title, interest, ownership, and
+proprietary rights in and to the Software, Documentation, and all related intellectual
+property therein.  Perforce's rights include, but are not limited to, all copies of the
+Software, Documentation, and any patent rights (including but not limited to patent
+applications and disclosures), copyrights, trademark rights, trade secret rights, and any
+other intellectual property right recognized in any country or jurisdiction in the world.
+The Software is protected by United States laws, laws of other nations, and international
+treaty provisions.  The Software, any license keys to the Software, and the Documentation
+constitute and embody valuable confidential information and trade secret information of
+Perforce, and Licensee will secure and protect such confidential information and trade
+secret information consistent with Perforce's rights therein and will not disclose such
+confidential information and trade secret information to any third party.
+
+4.2     Claim of Intellectual Property Infringement.  Notwithstanding any other provision
+of this License Agreement, Perforce will defend, or settle at its own expense, any action
+brought against Licensee to the extent that it is based on a claim that any Software
+supplied by Perforce hereunder infringes any third party intellectual property right (an
+"Infringement Claim"), and indemnify Licensee and its officers, directors, shareholders,
+employees, accountants, attorneys, and third party agents, against fines, penalties,
+costs, damages and expenses (including reasonable legal fees) finally awarded against
+Licensee by a court of competent jurisdiction, or agreed to in a written settlement
+agreement by Perforce, arising out of such Infringement Claim.  Perforce's obligation to
+indemnify Licensee pursuant to this Section 4.2 is subject to the following conditions:
+(a) Licensee must give Perforce prompt written notice of any Infringement Claim; (b)
+Licensee must provide, at Perforce's expense, reasonable information and assistance in
+connection with the defense and settlement of such Infringement Claim; (c) Licensee agrees
+in writing with Perforce that Perforce has sole control of the settlement or defense of
+such Infringement Claim; and (d) has not compromised or settled such Infringement Claim
+without Perforce's prior written approval.
+
+4.3     Notwithstanding the foregoing, Perforce will have no obligation under Section 4.2
+or otherwise with respect to any infringement claim based upon: (i) any use of the
+Software not in accordance with this License Agreement or the Documentation; (ii) any use
+of the Software in combination with other products, equipment, software, or data not
+supplied by Perforce where the combination gives rise to the claim; (iii) use of the
+Software in conjunction with Licensee data where use with such data gives rise to the
+claim; (iv) Licensee's failure to use updated or modified versions of the Software
+provided to Licensee by Perforce in order to avoid potential claims; (v) Software licensed
+for no fee, including trial, evaluation, or beta Software; or (vi) any modification of the
+Software by any party other than Perforce, or an authorized third party agent of Perforce.
+If a temporary or permanent injunction is obtained against the use of any part of the
+Software for the reason that it infringes any third party's intellectual property rights,
+Perforce will, at its option and expense, either (a) procure for Licensee the right to
+continue to use the Software, (b) modify the Software so that it becomes non-infringing
+but remains in substantial compliance with the Documentation, or (c) terminate Licensee's
+license to the affected Software and refund to Licensee the Software Support fees, or the
+Subscription Fees, as applicable, paid for the remaining portion of the term of the
+affected license(s).  THE PROVISIONS OF THIS SECTION 4 STATE THE EXCLUSIVE LIABILITY OF
+PERFORCE, AND THE EXCLUSIVE REMEDY OF LICENSEE, WITH RESPECT TO ANY CLAIM OF INTELLECTUAL
+PROPERTY INFRINGEMENT.
+
+5.      Limitation of Liability.  THE CUMULATIVE LIABILITY OF PERFORCE TO LICENSEE FOR ALL
+CLAIMS RELATING TO THE LICENSED SOFTWARE AND THIS LICENSE AGREEMENT, INCLUDING ANY CAUSE
+OF ACTION SOUNDING IN CONTRACT, TORT, OR STRICT LIABILITY, SHALL NOT EXCEED THE TOTAL
+AMOUNT OF ALL FEES PAID IN TO PERFORCE HEREUNDER.  THIS LIMITATION OF LIABILITY IS
+INTENDED TO APPLY WITHOUT REGARD TO WHETHER OTHER PROVISIONS OF THIS LICENSE AGREEMENT
+HAVE BEEN BREACHED OR HAVE PROVEN INEFFECTIVE.  PERFORCE SHALL HAVE NO LIABILITY FOR LOSS
+OF DATA OR DOCUMENTATION, IT BEING UNDERSTOOD THAT LICENSEE IS RESPONSIBLE FOR REASONABLE
+BACK-UP PRECAUTIONS.  IN NO EVENT SHALL PERFORCE BE LIABLE FOR ANY LOSS OF PROFITS, ANY
+INDIRECT, SPECIAL, INCIDENTAL, AND/OR CONSEQUENTIAL DAMAGES, INCLUDING PUNITIVE OR
+MULTIPLE DAMAGES, OR ANY CLAIMS OR DEMANDS BROUGHT AGAINST LICENSEE, EVEN IF PERFORCE HAS
+BEEN ADVISED OF THE POSSIBILITY OF SUCH CLAIMS OR DEMANDS.  THIS LIMITATION UPON DAMAGES
+AND CLAIMS IS INTENDED TO APPLY WITHOUT REGARD TO WHETHER OTHER PROVISIONS OF THIS LICENSE
+AGREEMENT HAVE BEEN BREACHED OR HAVE PROVEN INEFFECTIVE.  LICENSEE MAY HAVE ADDITIONAL
+RIGHTS UNDER CERTAIN LAWS (E.G., CONSUMER LAWS) THAT DO NOT ALLOW THE EXCLUSION OF IMPLIED
+WARRANTIES, OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES.  IF SUCH LAWS APPLY,
+CERTAIN EXCLUSIONS OR LIMITATIONS MAY NOT APPLY TO LICENSEE; HOWEVER, ALL OTHER
+RESTRICTIONS AND LIMITATIONS SHALL REMAIN IN EFFECT
+
+6.      Term and Termination.
+
+6.1     This License Agreement will commence on the Effective Date and continue until
+terminated in accordance with the terms hereof.  Perforce may terminate this License
+Agreement if Licensee breaches its obligations hereunder.  Perforce will affect such
+termination by giving Licensee notice of termination, specifying therein the alleged
+breach.  If the breach is curable, Licensee will have a grace period of fifteen (15) days
+after such notice is served to cure the breach described therein.  If the breach is cured
+within the fifteen (15) day grace period, then this License Agreement will remain in
+effect; otherwise, this License Agreement will automatically terminate upon the conclusion
+of the fifteen (15) day grace period.  Upon termination of the License Agreement for any
+reason the following terms shall apply: (a) all rights granted under this License
+Agreement will immediately terminate and Licensee must immediately stop all use of the
+Software; (b) Licensee must return to Perforce or destroy all copies of the Software
+provided to or made by or on behalf of Licensee, and will, within ten (10) days after the
+effective date of termination, provide Perforce with written certification that all such
+copies have been returned or destroyed; and (c) all provisions of this License Agreement
+that expressly, by implication, or necessity, contemplates performance or observance
+subsequent to the termination of this License Agreement will survive termination or
+expiration of the License Agreement and will continue in full force and effect, including
+any outstanding payment obligations.  Any termination shall be without prejudice to the
+rights and remedies of either party that may have accrued prior to such termination.  For
+the avoidance of doubt, and except in the case of breach of this License Agreement by
+Perforce, Licensee shall not be entitled to a refund of any prepaid fees upon termination
+of the License Agreement, and Perforce will not release Licensee from its obligations to
+pay Perforce all fees that have accrued under this License Agreement prior to its
+termination.  For purposes of clarity, if this License Agreement is terminated pursuant to
+an uncured breach by Perforce, then such termination will not affect Licensee's perpetual
+right to continue to use the Software if perpetual licenses of the Software were acquired
+by Licensee.  Either party will have the right to terminate this License Agreement
+effective immediately if: (a) a petition of bankruptcy is granted against the other party;
+(b) the other party makes an assignment for the benefit of creditors; (c) the other party
+admits to being unable to meet its obligations as they come due; or (d) a petition of
+bankruptcy is filed by or against the other party and if such petition is not dismissed by
+the bankruptcy court within sixty (60) days after its filing.  A party's intent to
+terminate this License Agreement under this Section 6 will be made by a written notice to
+the other party.
+
+7.      Miscellaneous.
+
+7.1     This License Agreement, or any of your rights and obligations under this License
+Agreement, cannot be assigned or otherwise transferred in whole or in part, and any such
+attempted assignment or transfer by Licensee in violation of the foregoing will be null
+and void.
+
+7.2     This License Agreement and any claim, cause of action or dispute arising out of,
+or related thereto, shall be governed by, and construed in accordance with the laws of,
+the State of Delaware, regardless of Licensee's country of origin or where Licensee uses
+the licenses from, without giving effect to any conflict of law principles, which would
+result in the application of the laws of a jurisdiction other than the State of Delaware.
+Any dispute, claim, or controversy arising out of, connected with, or relating to this
+License Agreement, the Software, or any use related thereto, will be submitted to the sole
+and exclusive jurisdiction of the competent court located in State of Delaware.  The 1980
+United Nations Convention on Contracts for the International Sale of Goods, any state's
+enactment of the Uniform Computer Information Transactions Act, and the United Nations
+Convention on the Limitation Period in the International Sale of Goods, and any subsequent
+revisions thereto, do not apply to this License Agreement.
+
+7.3     Failure by Perforce to enforce any rights under this License Agreement will not be
+construed as a waiver of such rights, and a waiver in one or more instances will not be
+construed as constituting a continuing waiver or as a waiver in other instances.  No
+modification of this License Agreement shall be binding unless it is in writing and is
+signed by an authorized representative of the party against whom enforcement of the
+modification is sought.  Except as expressly provided in this License Agreement, there are
+no third-party beneficiaries of this License Agreement.
+
+7.4     Licensee acknowledges that money damages may not be an adequate remedy in the
+event of actual or threatened breach of the obligations and/or undertakings hereunder.
+Therefore, in addition to any other remedies available hereunder, by law or otherwise,
+Perforce will be entitled to seek and obtain injunctive relief and/or any other
+appropriate decree of specific performance or any other appropriate equitable relief.
+
+7.5     The parties will be independent contractors under this License Agreement, and
+nothing herein will constitute either party as the employer, employee, agent, or
+representative of the other party, or both parties as joint venturers or partners for any
+purpose.
+
+7.6     If any provision of this License Agreement is held invalid, illegal, or otherwise
+unenforceable, such provision will be enforced as nearly as possible in accordance with
+the stated intention of the parties, and the enforceability of the remaining provisions of
+this License Agreement will not be impaired thereby.  To the extent any provision cannot
+be enforced in accordance with the stated intentions of the parties, such provision will
+be deemed not to be a part of this License Agreement.
+
+7.7     Neither party will be deemed to be in breach of this License Agreement, nor
+otherwise liable to the other, by reason of any delay in performance or non-performance of
+any of its obligations under this License Agreement arising out matters beyond the
+reasonable control of a party, including, war, strikes, lock outs, or industrial disputes
+(except in relation to a party's own workforce), outbreak of hostilities, riots, civil
+disturbances, pandemics, epidemics, or quarantines, acts or orders of any government
+department or constituted body, fire, explosion, earthquake, flood, acts of God, or acts
+of terrorism; provided, however, that no event will be treated as beyond the reasonable
+control of a party if it is attributable to a willful act or omission by such party, or
+any failure by such party to take reasonable precautions or any failure to mitigate or
+take reasonable steps to overcome such event.  If the performance of the impacted party is
+prevented for a period of thirty (30) days or more, the party not affected may terminate
+this License Agreement upon providing seven (7) days' advance written notice.
+
+7.8     This License Agreement, including all invoices hereunder, constitutes the sole and
+entire agreement of the parties with respect to the subject matter hereof and supersedes
+and cancels any prior and contemporaneous oral or written proposals, promises, or
+agreements.  There are no promises, covenants, or undertakings other than those expressly
+set forth in this License Agreement.  If Licensee issues a Licensee purchase order, or any
+other Licensee generated documentation, and the terms and conditions conflict with this
+License Agreement, the terms and conditions contained in this License Agreement, including
+all invoices incorporated hereunder, will control.  For purposes of clarity, no terms or
+conditions, including any pre-printed or boilerplate terms and conditions, stated in any
+Licensee purchase order, or in any other Licensee documentation, will be incorporated into
+or form any part of this License Agreement, and all such terms or conditions will be null
+and void and of no force and effect.
+
+8.      Evaluation License.  The terms of this Section 8 solely apply to installations of
+the Software in a non-production environment for a limited time period under the terms and
+conditions of this License Agreement, during which an Authorized User may evaluate the
+Software for use in support of Licensee's internal business operations (such Software, the
+"Evaluation Software").  The terms of Sections 2.1, 2.3, 3, 4, and 6 shall not apply to
+the parties' rights and obligations with respect to Evaluation Software.
+
+8.1     Rights and Restrictions.  Perforce grants Licensee a non-exclusive, non-
+transferable license to (i) install the Evaluation Software on Licensee's internal server
+in the country to which such Evaluation Software is delivered, and (ii) Use the Evaluation
+Software for the sole purpose of internally evaluating the Software, for a period agreed
+to in writing between Licensee and Perforce, or the period specified in the applicable
+license key delivered to Licensee for the Evaluation Software and any extensions thereto
+(the "Trial Period").  Licensee may not make use of the Evaluation Software, for any
+commercial or production purposes.  Perforce may provide Licensee with limited
+installation support for the Evaluation Software during the Trial Period.  Upon the
+expiration of the Trial Period, the license granted above shall terminate, and Licensee
+shall uninstall and cease use of the Evaluation Software.  Perforce may also include a
+"time bomb" within the Evaluation Software that shall prevent use of the Evaluation
+Software after the Trial Period has expired.  Notwithstanding the Trial Period, this
+License Agreement shall terminate immediately upon notice from Perforce if Licensee fails
+to comply with any provision of this License Agreement.
+
+8.2     Exclusion of Warranties.  ALL EVALUATION SOFTWARE AND SOFTWARE SUPPORT SERVICES
+THAT ARE PROVIDED BY PERFORCE ARE PROVIDED "AS IS."  NO WARRANTIES OR COMMITMENTS, EXPRESS
+OR IMPLIED, ARE MADE WITH RESPECT TO THE EVALUATION SOFTWARE OR SOFTWARE SUPPORT SERVICES
+SUPPLIED BY PERFORCE HEREUNDER, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTY OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SYSTEMS INTEGRATION, TITLE,
+SATISFACTORY QUALITY AND NON-INFRINGEMENT.  THE SOLE REMEDY OF LICENSEE FOR ANY ASSERTED
+DEFECT, ERROR, OR OTHER SHORTCOMING IN THE EVALUATION SOFTWARE IS THAT LICENSEE MAY
+REQUEST SOFTWARE SUPPORT SERVICES FOR EVALUATION SOFTWARE.
+
+This distribution also includes third-party software.Please refer to the accompanying license file
+for the applicable license terms: https://github.com/perforce/p4dam/blob/main/THIRD_PARTY_LICENSES.json
