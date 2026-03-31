@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+if [ ! -f /opt/perforce/helix-p4search/etc_in/default.config.properties ]; then
+  cp /opt/perforce/helix-p4search/etc_in/default.config.properties.template \
+     /opt/perforce/helix-p4search/etc_in/default.config.properties
+fi
+
+if [ ! -f /opt/perforce/helix-p4search/etc_in/service.properties ]; then
+  cp /opt/perforce/helix-p4search/etc_in/service.properties.template \
+     /opt/perforce/helix-p4search/etc_in/service.properties
+fi
+
 sed -i "s|^\(com.perforce.p4search.core.p4port=\).*$|\1$HTH_HELIX_P4PORT|" /opt/perforce/helix-p4search/etc_in/default.config.properties &&
 sed -i "s|^\(com.perforce.p4search.core.p4trust=\).*$|\1$HTH_HELIX_FINGERPRINT|" /opt/perforce/helix-p4search/etc_in/default.config.properties &&
 sed -i "s|^\(com.perforce.p4search.core.service.p4user=\).*$|\1$HTH_HELIX_USER|" /opt/perforce/helix-p4search/etc_in/default.config.properties &&
@@ -9,7 +19,7 @@ sed -i "s|^\(com.perforce.p4search.core.index.p4ticket=\).*$|\1$HTH_HELIX_PASSWO
 sed -i "s|^\(com.perforce.p4search.index.name=\).*$|\1$HTH_P4SEARCH_ES_INDEX|" /opt/perforce/helix-p4search/etc_in/default.config.properties &&
 sed -i "s|^\(com.perforce.p4search.elastic.pass=\).*$|\1$HTH_P4SEARCH_ES_PASSWORD|" /opt/perforce/helix-p4search/etc_in/default.config.properties &&
 sed -i "s|^\(com.perforce.p4search.service.token=\).*$|\1$HTH_P4SEARCH_TOKEN|" /opt/perforce/helix-p4search/etc_in/service.properties &&
-sed -i "s|^\(com.perforce.p4search.service.external-url=\).*$|\1${HTH_URL/#https:/http:}|" /opt/perforce/helix-p4search/etc_in/service.properties &&
+sed -i "s|^\(com.perforce.p4search.service.external-url=\).*$|\1$(echo "${HTH_URL/#https:/http:}" | sed 's|:\([0-9]\+\)$||'):1601|" /opt/perforce/helix-p4search/etc_in/service.properties &&
 if [ $? -ne 0 ]; then
   echo "Failed to replace attributes in the default.config.properties file"
   exit $?
