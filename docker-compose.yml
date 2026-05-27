@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: perforce/p4dam-nginx:2026.2
+    image: perforce/p4dam-nginx:2026.2.1
     platform: linux/amd64
     container_name: p4dam-nginx
     restart: unless-stopped
@@ -14,7 +14,7 @@ services:
       - ./nginx/ssl/server.crt:/etc/nginx/ssl/server.crt
       - ./nginx/ssl/server.key:/etc/nginx/ssl/server.key
   backend:
-    image: perforce/p4dam-backend:2026.2
+    image: perforce/p4dam-backend:2026.2.1
     platform: linux/amd64
     container_name: p4dam-backend
     restart: unless-stopped
@@ -25,7 +25,7 @@ services:
     # extra_hosts:
     #   - "dam.example.com:host-gateway"
   workers:
-    image: perforce/p4dam-workers:2026.2
+    image: perforce/p4dam-workers:2026.2.1
     platform: linux/amd64
     container_name: p4dam-workers
     restart: unless-stopped
@@ -36,14 +36,14 @@ services:
       - backups_data:/var/opt/hth/backups
       - ./gobackup/gobackup.yml:/opt/hth/embedded/etc/gobackup.yml
   scheduler:
-    image: perforce/p4dam-scheduler:2026.2
+    image: perforce/p4dam-scheduler:2026.2.1
     platform: linux/amd64
     container_name: p4dam-scheduler
     restart: unless-stopped
     env_file:
       - .env
   streamer:
-    image: perforce/p4dam-streamer:2026.2
+    image: perforce/p4dam-streamer:2026.2.1
     platform: linux/amd64
     container_name: p4dam-streamer
     restart: unless-stopped
@@ -52,7 +52,7 @@ services:
     volumes:
       - shared_data:/var/opt/hth/shared
   moonshine:
-    image: perforce/p4dam-moonshine:2026.2
+    image: perforce/p4dam-moonshine:2026.2.1
     platform: linux/amd64
     container_name: p4dam-moonshine
     restart: unless-stopped
@@ -74,7 +74,7 @@ services:
     env_file:
       - .env
   redis:
-    image: redis:7.2.12
+    image: redis:7.2.14
     container_name: p4dam-redis
     restart: unless-stopped
     volumes:
